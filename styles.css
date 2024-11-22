@@ -1,0 +1,264 @@
+/* Existing styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #007bff;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+input[type="text"] {
+    margin-right: 10px;
+}
+
+button {
+    margin-left: 5px;
+}
+
+span[id^="feedback"] {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+/* Styles for main navigation categories */
+nav ul > li {
+    margin: 15px 0; /* Add more space between main categories */
+}
+
+/* Hide submenus by default */
+nav ul ul {
+    display: none; /* Submenus are hidden initially */
+    margin-left: 20px; /* Indent submenus */
+    padding-left: 10px;
+    border-left: 2px solid #ccc; /* Optional: visual separator for submenus */
+}
+
+/* Show submenu when hovering over parent */
+nav ul li:hover > ul {
+    display: block; /* Submenus appear when hovering over a main category */
+}
+
+/* Parent category links styling */
+nav ul > li > a {
+    font-weight: bold;
+    font-size: 1.1em; /* Make category links slightly larger */
+    color: #333;
+}
+
+/* Submenu links styling */
+nav ul ul li a {
+    font-weight: normal;
+    color: #007bff;
+    font-size: 1em; /* Slightly smaller than parent links */
+}
+
+/* Hover effects for submenu links */
+nav ul ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Button link styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Scoped styles for the unscramble section */
+section h2 + ol .scrambled {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+section h2 + ol input[type="text"] {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+}
+
+section h2 + ol button {
+    margin: 5px 5px 5px 0;
+}
+/* Styling the word blocks */
+.word-block {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    cursor: grab;
+    font-size: 1em;
+    text-align: center;
+    user-select: none;
+}
+
+.word-block:active {
+    cursor: grabbing;
+}
+
+/* Drop area styling */
+#drop-area {
+    border: 2px dashed #ccc;
+    min-height: 50px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin: 20px 0;
+}
+
+/* Controls */
+#controls button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#controls button:hover {
+    background-color: #0056b3;
+}
+
+/* Feedback */
+#feedback {
+    margin-top: 10px;
+    font-weight: bold;
+}
+/* Unscramble exercise container */
+.unscramble-exercise {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Make scrambled words and drop area occupy more space */
+.scrambled-words,
+.drop-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 20px;
+    gap: 10px; /* Add spacing between elements */
+}
+
+/* Word blocks styling */
+.word-block {
+    min-width: 120px; /* Increase width */
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #eef;
+    cursor: grab;
+    font-size: 1em;
+    text-align: center;
+    user-select: none;
+}
+
+/* Adjust the drop slots for larger areas */
+.drop-slot {
+    min-width: 120px; /* Increase width for better visibility */
+    height: 50px; /* Slightly taller */
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+/* Highlight the drop slots for feedback */
+.drop-slot.correct {
+    background-color: #d4edda; /* Light green for correct slots */
+    outline: 2px solid green;
+}
+
+.drop-slot.wrong {
+    background-color: #f8d7da; /* Light red for wrong slots */
+    outline: 2px solid red;
+}
+
+.drop-slot.empty {
+    background-color: #fff3cd; /* Light yellow for empty slots */
+    outline: 2px solid yellow;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .word-block,
+    .drop-slot {
+        min-width: 80px; /* Smaller boxes for mobile */
+        height: 40px;
+    }
+
+    .scrambled-words,
+    .drop-area {
+        justify-content: space-around; /* Adjust spacing */
+    }
+}
+
+.word-block:active {
+    cursor: grabbing;
+}
+
+/* When a word is dropped, it replaces the default look */
+.drop-slot:empty {
+    background-color: #f4f4f4;
+}
+/* Highlighting for slots */
+.drop-slot {
+    transition: background-color 0.3s ease; /* Smooth transition for feedback */
+}
+.drop-slot.correct {
+    background-color: #e0ffe0; /* Light green */
+    outline: 2px solid green; /* Green outline for visibility */
+}
+
+.drop-slot.wrong {
+    background-color: #ffe0e0; /* Light red */
+    outline: 2px solid red; /* Red outline for visibility */
+}
+
+.drop-slot.empty {
+    background-color: #ffffe0; /* Light yellow */
+    outline: 2px solid yellow; /* Yellow outline for visibility */
+}
