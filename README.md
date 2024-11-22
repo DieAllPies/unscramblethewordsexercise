@@ -1,2 +1,2 @@
 # unscramble-the-words-exercise
-Here, the typical ESL unscramble the words exercise has been modelled using drag and drop functions
+The typical ESL 'unscramble the words' exercise has been implemented using drag-and-drop functionality, designed with HTML, CSS, and JavaScript.
